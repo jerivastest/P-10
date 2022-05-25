@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.58.0'
+project:
+    name: P-10
+    package:
+        name: P-10
+        api_version: '54.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/P-10/tests
+            options:
+                outputdir: robot/P-10/results
+
+    robot_testdoc:
+        options:
+            path: robot/P-10/tests
+            output: robot/P-10/doc/P-10_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
